@@ -4,6 +4,68 @@ import NavBar from "./components/nevbar/NavBar";
 import HeroSection from "./components/heroSection/HeroSection";
 import PricingCardList from "./components/pricing/PricingCardList";
 import Footer from "./components/footer/Footer";
+const data = [
+  {
+    title: "Random Product",
+    price: "$40.00 - $80.00",
+    buttonText: "Add To Cart",
+  },
+  {
+    title: "Random Product",
+    price: "$25.00 - $50.00",
+    buttonText: "View Product",
+  },
+  {
+    title: "Random Product",
+    price: "$15.00 - $30.00",
+    buttonText: "Add To Cart",
+  },
+  {
+    title: "Random Product",
+    price: "$10.00 - $20.00",
+    buttonText: "View Product",
+  },
+  {
+    title: "Random Product",
+    price: "$30.00 - $60.00",
+    buttonText: "Add To Cart",
+  },
+  {
+    title: "Random Product",
+    price: "$20.00 - $40.00",
+    buttonText: "View Product",
+  },
+  {
+    title: "Random Product",
+    price: "$35.00 - $70.00",
+    buttonText: "Add To Cart",
+  },
+  {
+    title: "Random Product",
+    price: "$12.00 - $24.00",
+    buttonText: "View Product",
+  },
+  {
+    title: "Random Product",
+    price: "$18.00 - $36.00",
+    buttonText: "Add To Cart",
+  },
+  {
+    title: "Random Product",
+    price: "$22.00 - $44.00",
+    buttonText: "View Product",
+  },
+  {
+    title: "Random Product",
+    price: "$28.00 - $56.00",
+    buttonText: "Add To Cart",
+  },
+  {
+    title: "Random Product",
+    price: "$42.00 - $84.00",
+    buttonText: "View Product",
+  },
+];
 
 function App() {
   const heroStyle = {
@@ -14,9 +76,9 @@ function App() {
   };
 
   const footerstyle = {
-    width:"100vh",
+    width: "100vh",
     padding: "5rem 0 0 0",
-    background:"grey"
+    background: "grey",
   };
 
   return (
@@ -30,12 +92,11 @@ function App() {
         />
       </div>
       <div style={heroStyle}>
-        <PricingCardList></PricingCardList>
+        <PricingCardList data={data}></PricingCardList>
       </div>
       <div className="row">
         <HeroSection
           style={heroStyle}
-          
           subtitle="Copyright © Your Website 2023"
         />
       </div>

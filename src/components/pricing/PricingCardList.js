@@ -1,52 +1,15 @@
 import PricingCard from "./PricingCard";
 
 function PricingCardList(props) {
+  // console.log(pros)
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
-
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
-
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
-      </div>{" "}
-      <div className="row">
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
-
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
-        <div className="col-sm">
-          <PricingCard></PricingCard>
-        </div>
+        {props.data.map((item, index) => (
+          <div className="col-sm" key={index}>
+            <PricingCard data={item}></PricingCard>
+          </div>
+        ))}
       </div>
     </div>
   );

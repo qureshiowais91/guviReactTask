@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import placeHolder from "../../placeHolder.jpg";
 
-function PricingCard() {
+function PricingCard(props) {
   const customStyle = {
     width: "18rem",
   };
 
+  const [addedToCart,addtoCart] = useState(false);
+
+  const clickHandler =()=>{
+    if(addedToCart){
+      addtoCart(false);
+    }else{
+      addtoCart(true);
+    }
+  }
   return (
     <div className="card mt-5" style={customStyle}>
       <img src={placeHolder} alt="sd" className="card-img-top" />
       <div className="card-body">
         <h2 className="card-text">
-          Two Words
+          {props.data.title}
         </h2>
-        <p>$40.00 - $80.00</p>
-      </div>
-      <button type="button" className="btn btn-light btn-outline-secondary m-5">
-        Add To Card
+        <p>{props.data.price}</p>
+      </div> 
+      <button type="button" onClick={clickHandler} className='btn btn-outline-secondary m-3'  >
+        {props.data.buttonText}
       </button>
     </div>
   );

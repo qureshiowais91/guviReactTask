@@ -1,5 +1,4 @@
 import React from "react";
-
 function NavBar() {
   return (  
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,8 +28,13 @@ function NavBar() {
             </li>
           </ul>
           <form className="d-flex">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit">Search</button>
+              
+            <button className="btn btn-outline-dark" type="submit">
+                <i className="bi-cart-fill me-1"></i>
+                Cart
+                <span className="badge bg-dark text-white ms-1 rounded-pill">0</span>
+            </button>
+
           </form>
         </div>
       </div>
