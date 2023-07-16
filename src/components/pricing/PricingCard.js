@@ -21,7 +21,7 @@ function PricingCard(props) {
 
   return (
     <div className="card mt-5" style={customStyle}>
-      <img src={placeHolder} alt="sd" className="card-img-top" />
+      <img src={placeHolder}  className="card-img-top" />
       <div className="card-body">
         <h2 className="card-text">{props.data.title}</h2>
         <p>{props.data.price}</p>

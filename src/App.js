@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import NavBar from "./components/nevbar/NavBar";
 import HeroSection from "./components/heroSection/HeroSection";
@@ -9,7 +9,7 @@ const data = [
     title: "Random Product",
     price: "$40.00 - $80.00",
     buttonText: "Add To Cart",
-    addToCart:"true",
+    addToCart: "true",
   },
   {
     title: "Random Product",
@@ -20,7 +20,7 @@ const data = [
     title: "Random Product",
     price: "$15.00 - $30.00",
     buttonText: "Add To Cart",
-    addToCart:"true"
+    addToCart: "true",
   },
   {
     title: "Random Product",
@@ -31,7 +31,7 @@ const data = [
     title: "Random Product",
     price: "$30.00 - $60.00",
     buttonText: "Add To Cart",
-    addToCart:"true"
+    addToCart: "true",
   },
   {
     title: "Random Product",
@@ -42,7 +42,7 @@ const data = [
     title: "Random Product",
     price: "$35.00 - $70.00",
     buttonText: "Add To Cart",
-    addToCart:"true"
+    addToCart: "true",
   },
   {
     title: "Random Product",
@@ -53,7 +53,7 @@ const data = [
     title: "Random Product",
     price: "$18.00 - $36.00",
     buttonText: "Add To Cart",
-    addToCart:"true"
+    addToCart: "true",
   },
   {
     title: "Random Product",
@@ -64,7 +64,7 @@ const data = [
     title: "Random Product",
     price: "$28.00 - $56.00",
     buttonText: "Add To Cart",
-    addToCart:"true"
+    addToCart: "true",
   },
   {
     title: "Random Product",
@@ -82,14 +82,14 @@ function App() {
   };
 
   const [cart, setCart] = useState([]);
-  
+
   function addToCart(product) {
     setCart([...cart, product]);
   }
 
   return (
     <div className="App container">
-      <NavBar ></NavBar>
+      <NavBar cart={cart}></NavBar>
       <div className="row">
         <HeroSection
           style={heroStyle}

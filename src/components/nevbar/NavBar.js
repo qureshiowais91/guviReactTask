@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import Cart from "../Cart/Cart";
 function NavBar(props) {
-  const [cart, setCart] = useState([]);
-
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -54,15 +52,7 @@ function NavBar(props) {
               </ul>
             </li>
           </ul>
-          <form className="d-flex">
-            <button className="btn btn-outline-dark" type="submit">
-              <i className="bi-cart-fill me-1"></i>
-              Cart
-              <span className="badge bg-dark text-white ms-1 rounded-pill">
-                0
-              </span>
-            </button>
-          </form>
+          <Cart details={props.cart}/>
         </div>
       </div>
     </nav>
