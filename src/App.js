@@ -1,14 +1,15 @@
-import React from "react";
+import React,{useState} from "react";
 import "./App.css";
 import NavBar from "./components/nevbar/NavBar";
 import HeroSection from "./components/heroSection/HeroSection";
 import PricingCardList from "./components/pricing/PricingCardList";
-import Footer from "./components/footer/Footer";
+
 const data = [
   {
     title: "Random Product",
     price: "$40.00 - $80.00",
     buttonText: "Add To Cart",
+    addToCart:"true",
   },
   {
     title: "Random Product",
@@ -19,6 +20,7 @@ const data = [
     title: "Random Product",
     price: "$15.00 - $30.00",
     buttonText: "Add To Cart",
+    addToCart:"true"
   },
   {
     title: "Random Product",
@@ -29,6 +31,7 @@ const data = [
     title: "Random Product",
     price: "$30.00 - $60.00",
     buttonText: "Add To Cart",
+    addToCart:"true"
   },
   {
     title: "Random Product",
@@ -39,6 +42,7 @@ const data = [
     title: "Random Product",
     price: "$35.00 - $70.00",
     buttonText: "Add To Cart",
+    addToCart:"true"
   },
   {
     title: "Random Product",
@@ -49,6 +53,7 @@ const data = [
     title: "Random Product",
     price: "$18.00 - $36.00",
     buttonText: "Add To Cart",
+    addToCart:"true"
   },
   {
     title: "Random Product",
@@ -59,6 +64,7 @@ const data = [
     title: "Random Product",
     price: "$28.00 - $56.00",
     buttonText: "Add To Cart",
+    addToCart:"true"
   },
   {
     title: "Random Product",
@@ -75,15 +81,15 @@ function App() {
     left: "0",
   };
 
-  const footerstyle = {
-    width: "100vh",
-    padding: "5rem 0 0 0",
-    background: "grey",
-  };
+  const [cart, setCart] = useState([]);
+  
+  function addToCart(product) {
+    setCart([...cart, product]);
+  }
 
   return (
     <div className="App container">
-      <NavBar></NavBar>
+      <NavBar ></NavBar>
       <div className="row">
         <HeroSection
           style={heroStyle}
@@ -92,7 +98,7 @@ function App() {
         />
       </div>
       <div style={heroStyle}>
-        <PricingCardList data={data}></PricingCardList>
+        <PricingCardList data={data} addtoCart={addToCart}></PricingCardList>
       </div>
       <div className="row">
         <HeroSection
