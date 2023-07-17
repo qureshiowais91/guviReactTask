@@ -7,7 +7,7 @@ function PricingCardList(props) {
       <div className="row">
         {props.data.map((item, index) => (
           <div className="col-sm" key={index}>
-            <PricingCard data={item}  addtoCart={props.addtoCart}  identify={index}></PricingCard>
+            <PricingCard data={item}  addtoCart={props.addtoCart} identify={index} ></PricingCard>
           </div>
         ))}
       </div>

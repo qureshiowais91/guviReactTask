@@ -87,9 +87,16 @@ function App() {
     setCart([...cart, product]);
   }
 
+  function removeItemFromCart(e){
+    console.log(cart)
+    const newArray = [...cart];
+    newArray.splice(e?.target?.id, 1);
+    setCart(newArray);
+  }
+
   return (
     <div className="App container">
-      <NavBar cart={cart}></NavBar>
+      <NavBar cart={cart}  setDeletedItem={removeItemFromCart}  ></NavBar>
       <div className="row">
         <HeroSection
           style={heroStyle}
@@ -98,7 +105,7 @@ function App() {
         />
       </div>
       <div style={heroStyle}>
-        <PricingCardList data={data} addtoCart={addToCart}></PricingCardList>
+        <PricingCardList data={data} addtoCart={addToCart} ></PricingCardList>
       </div>
       <div className="row">
         <HeroSection

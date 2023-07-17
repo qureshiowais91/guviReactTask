@@ -52,7 +52,7 @@ function NavBar(props) {
               </ul>
             </li>
           </ul>
-          <Cart details={props.cart}/>
+          <Cart details={props.cart} setDeletedItem={props.setDeletedItem}/>
         </div>
       </div>
     </nav>

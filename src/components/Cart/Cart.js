@@ -37,7 +37,7 @@ function Cart(props) {
                 <div className="">
                   {props.details.map((item, index) => (
                     <div className="col-sm" key={index}>
-                      <CartItem title={item.title} price={item.price} />
+                      <CartItem index={index} title={item.title} price={item.price} setDeltedItem={props.setDeletedItem} />
                     </div>
                   ))}
                 </div>
