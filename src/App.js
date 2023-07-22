@@ -1,75 +1,105 @@
 import React, { useState } from "react";
 import "./App.css";
 import NavBar from "./components/nevbar/NavBar";
-import HeroSection from "./components/heroSection/HeroSection";
+import HeroSection from "./components/HeroSection/HeroSection";
 import PricingCardList from "./components/pricing/PricingCardList";
 
 const data = [
   {
-    title: "Random Product",
-    price: "$40.00 - $80.00",
+    id: "q3hsb8a2c90i4n1",
+    title: "Product A",
+    price: "$40.00",
     buttonText: "Add To Cart",
-    addToCart: "true",
+    addable: true,
+    isAddedToCart: false,
   },
   {
-    title: "Random Product",
-    price: "$25.00 - $50.00",
+    id: "u9xle2o1p4g7w3",
+    title: "Product B",
+    price: "$25.00",
     buttonText: "View Product",
+    addable: false,
+    isAddedToCart: false,
   },
   {
-    title: "Random Product",
-    price: "$15.00 - $30.00",
+    id: "m5zr9k6t1v8o2d",
+    title: "Product C",
+    price: "$15.00",
     buttonText: "Add To Cart",
-    addToCart: "true",
+    addable: true,
+    isAddedToCart: false,
   },
   {
-    title: "Random Product",
-    price: "$10.00 - $20.00",
+    id: "t2i8p7r9x5e4o6a",
+    title: "Product D",
+    price: "$10.00",
     buttonText: "View Product",
+    addable: false,
+    isAddedToCart: false,
   },
   {
-    title: "Random Product",
-    price: "$30.00 - $60.00",
+    id: "j7a1l4n8c2m3o6v",
+    title: "Product E",
+    price: "$30.00",
     buttonText: "Add To Cart",
-    addToCart: "true",
+    addable: true,
+    isAddedToCart: false,
   },
   {
-    title: "Random Product",
-    price: "$20.00 - $40.00",
+    id: "z3d7h8u1k6b5c2",
+    title: "Product F",
+    price: "$20.00",
     buttonText: "View Product",
+    addable: false,
+    isAddedToCart: false,
   },
   {
-    title: "Random Product",
-    price: "$35.00 - $70.00",
+    id: "v4m9n3o8x6i1j2",
+    title: "Product G",
+    price: "$35.00",
     buttonText: "Add To Cart",
-    addToCart: "true",
+    addable: true,
+    isAddedToCart: false,
   },
   {
-    title: "Random Product",
-    price: "$12.00 - $24.00",
-    buttonText: "View Product",
-  },
-  {
-    title: "Random Product",
-    price: "$18.00 - $36.00",
+    id: "r2o6j9l3p7v5i4",
+    title: "Product H",
+    price: "$12.00",
     buttonText: "Add To Cart",
-    addToCart: "true",
+    addable: true,
+    isAddedToCart: false,
   },
   {
-    title: "Random Product",
-    price: "$22.00 - $44.00",
+    id: "l5u4b3c8d2n9j6",
+    title: "Product I",
+    price: "$18.00",
     buttonText: "View Product",
+    addable: false,
+    isAddedToCart: false,
   },
   {
-    title: "Random Product",
-    price: "$28.00 - $56.00",
+    id: "y1x8d9o2t6i4n7",
+    title: "Product J",
+    price: "$22.00",
     buttonText: "Add To Cart",
-    addToCart: "true",
+    addable: true,
+    isAddedToCart: false,
   },
   {
-    title: "Random Product",
-    price: "$42.00 - $84.00",
+    id: "b2i9x8a3n5v4d7",
+    title: "Product K",
+    price: "$28.00",
     buttonText: "View Product",
+    addable: false,
+    isAddedToCart: false,
+  },
+  {
+    id: "k3j6v9n1p7x5i2",
+    title: "Product L",
+    price: "$42.00",
+    buttonText: "Add To Cart",
+    addable: true,
+    isAddedToCart: false,
   },
 ];
 
@@ -81,22 +111,28 @@ function App() {
     left: "0",
   };
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(data);
 
-  function addToCart(product) {
-    setCart([...cart, product]);
+  function addToCart(id) {
+    const productAddedToCart = data.filter((product) => {
+      return product.id === id;
+    });
+    productAddedToCart[0].isAddedToCart = true;
+    setCart([...cart], productAddedToCart);
   }
 
-  function removeItemFromCart(e){
-    console.log(cart)
-    const newArray = [...cart];
-    newArray.splice(e?.target?.id, 1);
-    setCart(newArray);
+
+  function removeItemFromCart(id) {
+    const productAddedToCart = data.filter((product) => {
+      return product.id === id;
+    });
+    productAddedToCart[0].isAddedToCart = false;
+    setCart([...cart], productAddedToCart[0]);
   }
 
   return (
     <div className="App container">
-      <NavBar cart={cart}  setDeletedItem={removeItemFromCart}  ></NavBar>
+      <NavBar cart={cart} setDeletedItem={removeItemFromCart}></NavBar>
       <div className="row">
         <HeroSection
           style={heroStyle}
@@ -105,7 +141,7 @@ function App() {
         />
       </div>
       <div style={heroStyle}>
-        <PricingCardList data={data} addtoCart={addToCart} ></PricingCardList>
+        <PricingCardList data={cart} addtoCart={addToCart}></PricingCardList>
       </div>
       <div className="row">
         <HeroSection

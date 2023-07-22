@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import placeHolder from "../../placeHolder.jpg";
 
 function PricingCard(props) {
@@ -6,16 +6,11 @@ function PricingCard(props) {
     width: "18rem",
   };
 
-  const [addedToCart, setToCart] = useState(false);
 
-  const clickHandler = () => {
-    if (props.data.addToCart === "true") {
-      if (addedToCart === Boolean(false)) {
-        props.addtoCart(props.data);
-        setToCart(true);
-      } else {
-        setToCart(false);
-      }
+  const clickHandler = (e) => {
+    console.log(e)
+    if (props.data.addable == true) {
+      props.addtoCart(props.data.id);
     }
   };
 
@@ -29,7 +24,7 @@ function PricingCard(props) {
       <button
         type="button"
         onClick={clickHandler}
-        disabled={addedToCart}
+        disabled={props.data.addable && props.data.isAddedToCart}
         className="btn btn-outline-secondary m-3"
       >
         {props.data.buttonText}

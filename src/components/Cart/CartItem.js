@@ -1,8 +1,10 @@
 import React from "react";
 
-function CartItem({index,title, price, setDeltedItem}) {
-  function deleted(product) {
-    setDeltedItem(product);
+function CartItem({id,title, price, setDeltedItem}) {
+  function deleted() {
+    console.log(id)
+    debugger
+    setDeltedItem(id);
   }
 
   return (
@@ -11,7 +13,7 @@ function CartItem({index,title, price, setDeltedItem}) {
         <h3>{title}</h3>
         <p>{price}</p>
       </div>
-      <button className="btn btn-outline-danger" id={index} onClick={deleted}>
+      <button className="btn btn-outline-danger" onClick={deleted}>
         Remove
       </button>
     </div>

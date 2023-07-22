@@ -35,14 +35,21 @@ function Cart(props) {
               </div>
               <div className="modal-body">
                 <div className="">
-                  {props.details.map((item, index) => (
-                    <div className="col-sm" key={index}>
-                      <CartItem index={index} title={item.title} price={item.price} setDeltedItem={props.setDeletedItem} />
-                    </div>
-                  ))}
+                  {props.details.map(
+                    (item, index) =>
+                      item.isAddedToCart && (
+                        <div className="col-sm" key={index}>
+                          <CartItem
+                            id={item.id}
+                            title={item.title}
+                            price={item.price}
+                            setDeltedItem={props.setDeletedItem}
+                          />
+                        </div>
+                      )
+                  )}
                 </div>
               </div>
-             
             </div>
           </div>
         </div>
