@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import NavBar from "./components/nevbar/NavBar";
-import HeroSection from "./components/HeroSection/HeroSection";
+import HeroSection from "./components/heroSection/HeroSection";
 import PricingCardList from "./components/pricing/PricingCardList";
 
 const data = [
