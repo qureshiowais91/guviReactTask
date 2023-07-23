@@ -3,6 +3,10 @@ import "./App.css";
 import NavBar from "./components/nevbar/NavBar";
 import HeroSection from "./components/heroSection/HeroSection";
 import PricingCardList from "./components/pricing/PricingCardList";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas);
+
 
 const data = [
   {

@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import CartItem from "./CartItem";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Cart(props) {
   const [isCartOpen, setCartVisibility] = useState(false);
-
+  const t = props.details.filter((item) => {
+    return item.isAddedToCart == true;
+  });
+  console.log(t.length);
   const handleOpenModal = () => {
     setCartVisibility(true);
   };
@@ -14,9 +18,12 @@ function Cart(props) {
 
   return (
     <div>
-      <button className="btn btn-outline-dark" onClick={handleOpenModal}>
-        <i className="bi bi-cart-fill me-1"></i>
+      <button className="btn btn-outline-dark ps-3" onClick={handleOpenModal}>
+        <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
         Cart
+        <span class="badge bg-dark text-white ms-1 rounded-pill">
+          {t.length}
+        </span>
       </button>
 
       {isCartOpen && (
