@@ -1,111 +1,28 @@
-import React, { useState } from "react";
-import "./App.css";
-import NavBar from "./components/nevbar/NavBar";
-import HeroSection from "./components/heroSection/HeroSection";
-import PricingCardList from "./components/pricing/PricingCardList";
-
-const data = [
-  {
-    title: "Random Product",
-    price: "$40.00 - $80.00",
-    buttonText: "Add To Cart",
-    addToCart: "true",
-  },
-  {
-    title: "Random Product",
-    price: "$25.00 - $50.00",
-    buttonText: "View Product",
-  },
-  {
-    title: "Random Product",
-    price: "$15.00 - $30.00",
-    buttonText: "Add To Cart",
-    addToCart: "true",
-  },
-  {
-    title: "Random Product",
-    price: "$10.00 - $20.00",
-    buttonText: "View Product",
-  },
-  {
-    title: "Random Product",
-    price: "$30.00 - $60.00",
-    buttonText: "Add To Cart",
-    addToCart: "true",
-  },
-  {
-    title: "Random Product",
-    price: "$20.00 - $40.00",
-    buttonText: "View Product",
-  },
-  {
-    title: "Random Product",
-    price: "$35.00 - $70.00",
-    buttonText: "Add To Cart",
-    addToCart: "true",
-  },
-  {
-    title: "Random Product",
-    price: "$12.00 - $24.00",
-    buttonText: "View Product",
-  },
-  {
-    title: "Random Product",
-    price: "$18.00 - $36.00",
-    buttonText: "Add To Cart",
-    addToCart: "true",
-  },
-  {
-    title: "Random Product",
-    price: "$22.00 - $44.00",
-    buttonText: "View Product",
-  },
-  {
-    title: "Random Product",
-    price: "$28.00 - $56.00",
-    buttonText: "Add To Cart",
-    addToCart: "true",
-  },
-  {
-    title: "Random Product",
-    price: "$42.00 - $84.00",
-    buttonText: "View Product",
-  },
-];
+import React from "react";
+import Sidebar from "./components/sideBar";
+import Navbar from "./components/navbar";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import "./sb-admin-2.min.css";
 
 function App() {
-  const heroStyle = {
-    width: "100%",
-    margin: "12rem 0 12rem 0",
-    right: "0",
-    left: "0",
-  };
-
-  const [cart, setCart] = useState([]);
-
-  function addToCart(product) {
-    setCart([...cart, product]);
-  }
-
   return (
-    <div className="App container">
-      <NavBar cart={cart}></NavBar>
-      <div className="row">
-        <HeroSection
-          style={heroStyle}
-          title="Shop in style"
-          subtitle="With this shop hompeage template"
-        />
-      </div>
-      <div style={heroStyle}>
-        <PricingCardList data={data} addtoCart={addToCart}></PricingCardList>
-      </div>
-      <div className="row">
-        <HeroSection
-          style={heroStyle}
-          subtitle="Copyright © Your Website 2023"
-        />
-      </div>
+    <div className="App">
+      <BrowserRouter>
+        <div className="container-flauid">
+          <div className="row">
+          <div className="col-12">
+            <Navbar></Navbar>
+            </div>
+            <Sidebar></Sidebar>
+          </div>
+
+          <Routes>
+            <Route path="/" />
+            <Route path="/about" />
+            <Route path="/test" />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
