@@ -1,7 +1,6 @@
 import shadows from "@mui/material/styles/shadows";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "./navbar";
 
 const Sidebar = () => {
   const [showComponents, setShowComponents] = useState(false);
