@@ -30,7 +30,6 @@ const ButtonComp = () => {
           </div>
         </div>
         <div>
-          <div className>
           <div className="card shadow mb-4">
             <div className="card-header py-3">
               <h6 className="m-0 font-weight-bold text-primary">
@@ -38,7 +37,6 @@ const ButtonComp = () => {
               </h6>
             </div>
             <SplitButtons></SplitButtons>
-          </div>
           </div>
         </div>
       </div>
