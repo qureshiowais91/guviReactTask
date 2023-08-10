@@ -8,6 +8,9 @@ import CardsComp from "./components/pages/cards/cards";
 import ColorComp from "./components/pages/color/color";
 import BorderComp from "./components/pages/borders/border";
 import OtherComp from "./components/pages/other/other";
+import Animation from "./components/pages/animation/animation";
+import LoginComp from "./components/pages/login/login";
+
 function App() {
   return (
     <div className="App">
@@ -24,8 +27,9 @@ function App() {
             <Route path="/cards" element={<CardsComp />} />
             <Route path="/utilities-color" element={<ColorComp />} />
             <Route path="/utilities-border" element={<BorderComp />} />
-            <Route path="/utilities-animation" element={<ButtonComp />} />
+            <Route path="/utilities-animation" element={<Animation />} />
             <Route path="/utilities-other" element={<OtherComp />} />
+            <Route path="/login" element={<LoginComp />} />
           </Routes>
         </div>
       </BrowserRouter>
