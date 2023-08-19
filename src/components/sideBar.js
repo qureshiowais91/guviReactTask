@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
   const [showComponents, setShowComponents] = useState(false);
   const [showUtil, setShowUtil] = useState(false);
   const [showPages, setShowPages] = useState(false);
+
+  let navigate = useNavigate();
+  function handleClick() {
+    navigate('/login');
+  }
 
 
   return (
@@ -64,10 +70,10 @@ const Sidebar = () => {
         >
           <div className="bg-white py-2 collapse-inner rounded">
             <h6 className="collapse-header">Custom Components:</h6>
-            <Link className="collapse-item" to="/buttons">
+            <NavLink className="collapse-item" to="/dashboard/buttons">
               Buttons
-            </Link>
-            <Link className="collapse-item" to="/cards">
+            </NavLink>
+            <Link className="collapse-item" to="/dashboard/cards">
               Cards
             </Link>
           </div>
@@ -96,16 +102,16 @@ const Sidebar = () => {
         >
           <div className="bg-white py-2 collapse-inner rounded">
             <h6 className="collapse-header">Custom Utilities:</h6>
-            <Link className="collapse-item" to="/utilities-color">
+            <Link className="collapse-item" to="/dashboard/utilities-color">
               Colors
             </Link>
-            <Link className="collapse-item" to="/utilities-border">
+            <Link className="collapse-item" to="/dashboard/utilities-border">
               Borders
             </Link>
-            <Link className="collapse-item" to="/utilities-animation">
+            <Link className="collapse-item" to="/dashboard/utilities-animation">
               Animations
             </Link>
-            <Link className="collapse-item" to="/utilities-other">
+            <Link className="collapse-item" to="/dashboard/utilities-other">
               Other
             </Link>
           </div>
@@ -140,7 +146,7 @@ const Sidebar = () => {
         >
           <div className="bg-white py-2 collapse-inner rounded">
             <h6 className="collapse-header">Login Screens:</h6>
-            <Link className="collapse-item" to="/login">
+            <Link className="collapse-item" onClick={handleClick} to="/login">
               Login
             </Link>
             <Link className="collapse-item" to="/register">
@@ -151,7 +157,7 @@ const Sidebar = () => {
             </Link>
             <div className="collapse-divider"></div>
             <h6 className="collapse-header">Other Pages:</h6>
-            <Link className="collapse-item" to="/404">
+            <Link className="collapse-item" to="/dashboard/404">
               404 Page
             </Link>
             <Link className="collapse-item" to="/blank">
