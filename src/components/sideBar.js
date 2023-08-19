@@ -160,7 +160,7 @@ const Sidebar = () => {
             <Link className="collapse-item" to="/dashboard/404">
               404 Page
             </Link>
-            <Link className="collapse-item" to="/blank">
+            <Link className="collapse-item" to="/dashboard/blank">
               Blank Page
             </Link>
           </div>

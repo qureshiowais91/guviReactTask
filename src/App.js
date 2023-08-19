@@ -16,7 +16,8 @@ import OtherComp from "./components/pages/other/other";
 import Animation from "./components/pages/animation/animation";
 import RegisterComponent from "./components/pages/register/register";
 import ForgotPassword from "./components/pages/forgotPassoword/forgotpassword";
-import NotFound from "./components/pages/404/notfount"
+import NotFound from "./components/pages/404/notfount";
+import BlankPage from "./components/pages/blankpage/blankpage";
 const routeDefination = createRoutesFromElements(
   <Route>
     <Route path='/' element={<LoginComp />} />
@@ -32,6 +33,7 @@ const routeDefination = createRoutesFromElements(
       <Route path='/dashboard/utilities-animation' element={<Animation />} />
       <Route path='/dashboard/utilities-other' element={<OtherComp />} />
       <Route path='/dashboard/404' element={<NotFound/>}/>
+      <Route path='/dashboard/blank' element={<BlankPage/>}/>
     </Route>
   </Route>
 );
@@ -39,7 +41,7 @@ const router = createBrowserRouter(routeDefination);
 
 function App() {
   return (
-    <div className='App bg-gradient-primary'>
+    <div className='App'>
       <RouterProvider router={router} />
     </div>
   );
