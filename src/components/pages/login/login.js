@@ -1,7 +1,23 @@
 import React from 'react';
-import {Link,NavLink} from 'react-router-dom'
+import '../../../sb-admin-2.min.css';
+import { useEffect } from 'react';
 
+import { Link, NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const LoginComp = () => {
+  useEffect(() => {
+    document.body.classList.add('bg-gradient-primary');
+
+    return () => {
+      document.body.classList.remove('bg-gradient-primary');
+    };
+  }, []);
+
+  let navigate = useNavigate();
+  function handleClick() {
+    navigate('/dashboard');
+  }
+
   return (
     <div className='container'>
       <div className='row justify-content-center'>
@@ -49,19 +65,16 @@ const LoginComp = () => {
                         </div>
                       </div>
                       <button
-                        
+                        onClick={handleClick}
                         className='btn btn-primary btn-user btn-block'
                       >
                         Login
                       </button>
                       <hr />
-                      <Link
-                        to='/dashboard'
-                        className='btn btn-google btn-user btn-block'
-                      >
+                      <div className='btn btn-google btn-user btn-block'>
                         <i className='fab fa-google fa-fw'></i> Login with
                         Google
-                      </Link>
+                      </div>
                       <Link
                         to='/dashboard'
                         className='btn btn-facebook btn-user btn-block'
