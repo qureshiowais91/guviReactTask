@@ -169,7 +169,7 @@ const Sidebar = () => {
 
       {/* Nav Item - Charts */}
       <li className="nav-item">
-        <Link className="nav-link" to="/charts">
+        <Link className="nav-link" to="/dashboard/charts">
           <i className="fas fa-fw fa-chart-area"></i>
           <span>Charts</span>
         </Link>
@@ -177,7 +177,7 @@ const Sidebar = () => {
 
       {/* Nav Item - Tables */}
       <li className="nav-item">
-        <Link className="nav-link" to="/tables">
+        <Link className="nav-link" to="/dashboard/tables">
           <i className="fas fa-fw fa-table"></i>
           <span>Tables</span>
         </Link>

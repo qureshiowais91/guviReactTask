@@ -1,5 +1,7 @@
 import React from 'react';
 import profileSvg from  "../../../img/undraw_posting_photo.svg"
+import BarComponent from '../charts/Areacomp';
+import Piecomp from '../charts/piecom';
 const Dashboard = () => {
   return (
     <div className='container'>
@@ -152,19 +154,7 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className='card-body'>
-                <div className='chart-area'>
-                  <canvas
-                    id='myAreaChart'
-                    style={{
-                      display: 'block',
-                      height: '320px',
-                      width: '587px',
-                    }}
-                    width='1173'
-                    height='639'
-                    className='chartjs-render-monitor'
-                  ></canvas>
-                </div>
+                 <BarComponent></BarComponent>
               </div>
             </div>
           </div>
@@ -208,17 +198,7 @@ const Dashboard = () => {
               </div>
               <div className='card-body'>
                 <div className='chart-pie pt-4 pb-2'>
-                  <canvas
-                    id='myPieChart'
-                    width='519'
-                    height='489'
-                    style={{
-                      display: 'block',
-                      height: '245px',
-                      width: '260px',
-                    }}
-                    className='chartjs-render-monitor'
-                  ></canvas>
+                 <Piecomp></Piecomp>
                 </div>
                 <div className='mt-4 text-center small'>
                   <span className='mr-2'>
@@ -370,9 +350,9 @@ const Dashboard = () => {
       </div>
       <div className="card-body">
         <p>
-          SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order
+          This React.Js Project makes extensive use of Bootstrap 4 utility classes in order
           to reduce CSS bloat and poor page performance. Custom CSS classes are
-          used to create custom components and custom utility classes.
+          used to create custom React components
         </p>
         <p className="mb-0">
           Before working with this theme, you should become familiar with the

@@ -1,7 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+
 const RegisterComponent = () => {
+  useEffect(() => {
+    document.body.classList.add('bg-gradient-primary');
+
+    return () => {
+      document.body.classList.remove('bg-gradient-primary');
+    };
+  }, []);
+    
+
   return (
-    <div className='bg-gradient-primary'>
+    <div className=''>
       <div className='container'>
         <div className='card o-hidden border-0 shadow-lg my-5'>
           <div className='card-body p-0'>
@@ -59,12 +71,12 @@ const RegisterComponent = () => {
                         />
                       </div>
                     </div>
-                    <a
-                      href='login.html'
+                    <Link
+                      to='/'
                       className='btn btn-primary btn-user btn-block'
                     >
                       Register Account
-                    </a>
+                    </Link>
                     <hr />
                     <a
                       href='index.html'

@@ -1,14 +1,20 @@
 import Sidebar from '../sideBar';
 import { Outlet } from 'react-router-dom';
-import Navbar from "../navbar/navbar";
+import Navbar from '../navbar/navbar';
 function RootLayout() {
   return (
-    <div>
-      <Sidebar></Sidebar>
+    <div className='container-flauid'>
       <Navbar></Navbar>
-      <main>
-        <Outlet />
-      </main>
+      <div className='row'>
+        <div className='col-1'>
+          <Sidebar></Sidebar>
+        </div>
+        <div className='col-11'>
+          <main>
+            <Outlet />
+          </main>
+        </div>
+      </div>
     </div>
   );
 }

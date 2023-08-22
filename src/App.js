@@ -19,6 +19,8 @@ import ForgotPassword from "./components/pages/forgotPassoword/forgotpassword";
 import NotFound from "./components/pages/404/notfount";
 import BlankPage from "./components/pages/blankpage/blankpage";
 import Dashboard from './components/pages/dashboard/dashboard';
+import ChartsComponent from './components/pages/charts/chartscomp';
+import TabelCompo from './components/pages/table/tablecompo';
 const routeDefination = createRoutesFromElements(
   <Route>
     <Route path='/' element={<LoginComp />} />
@@ -36,6 +38,8 @@ const routeDefination = createRoutesFromElements(
       <Route path='/dashboard/utilities-other' element={<OtherComp />} />
       <Route path='/dashboard/404' element={<NotFound/>}/>
       <Route path='/dashboard/blank' element={<BlankPage/>}/>
+      <Route path='/dashboard/charts' element={<ChartsComponent/>}/>
+      <Route path='/dashboard/tables'  element={<TabelCompo/>}/>
     </Route>
   </Route>
 );

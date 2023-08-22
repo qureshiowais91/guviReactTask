@@ -4,7 +4,7 @@ import BrandButtons from "./BrandButtons";
 import SplitButtons from "./SplitButton";
 const ButtonComp = () => {
   return (
-    <div className="container">
+    <div className="container-sm">
       <h2>Button </h2>
       <div className="container">
         <div className="row">
