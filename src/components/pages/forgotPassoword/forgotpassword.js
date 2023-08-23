@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../../sb-admin-2.min.css';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 const ForgotPassword = () => {
   useEffect(() => {
     document.body.classList.add('bg-gradient-primary');
@@ -38,12 +39,12 @@ const ForgotPassword = () => {
                           placeholder='Enter Email Address...'
                         />
                       </div>
-                      <a
-                        href='login.html'
+                      <Link
+                        href='/login'
                         className='btn btn-primary btn-user btn-block'
                       >
                         Reset Password
-                      </a>
+                      </Link>
                     </form>
                     <hr />
                     <div className='text-center'>
