@@ -2,9 +2,43 @@ import React from 'react';
 import undrawprofile from '../../img/undraw_profile.svg';
 import undraw_new_message from '../../img/undraw_new_message.svg';
 import undraw_notify from '../../img/undraw_notify.svg';
+import Dropdown from 'react-bootstrap/Dropdown';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 const ProfileComponent = () => {
+  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClose = (e) => {
+    setShow(false);
+    if (e.target.value == 'logout') {
+      navigate('/login');
+    }
+  };
+  const handleShow = () => setShow(true);
+
   return (
     <ul className='navbar-nav ml-auto'>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Ready to Leave?</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Select "Logout" below if you are ready to end your current session.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant='secondary' onClick={handleClose}>
+            Cancle
+          </Button>
+          <Button variant='primary' value={"logout"} onClick={handleClose}>
+            Logout
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
       <li className='nav-item dropdown no-arrow d-sm-none'>
         <a
           className='nav-link dropdown-toggle'
@@ -105,12 +139,34 @@ const ProfileComponent = () => {
           <span className='mr-2 d-none d-lg-inline text-gray-600 small'>
             Douglas McGee
           </span>
-          <img
-            className='img-profile rounded-circle'
-            src={undrawprofile}
-            alt='Profile'
-          />
+
+          <Dropdown>
+            <Dropdown.Toggle
+              className='bg-transparent '
+              variant=''
+              id='dropdown-basic'
+            >
+              <img
+                className='img-profile rounded-circle'
+                src={undrawprofile}
+                alt='Profile'
+              />{' '}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href='#/action-1'>Profile</Dropdown.Item>
+              <Dropdown.Item href='#/action-2'>Settings</Dropdown.Item>
+              <Dropdown.Item href='#/action-3'>Activity Log</Dropdown.Item>
+              <hr></hr>
+              <Dropdown.Item>
+                <Button variant='primary' onClick={handleShow}>
+                  Logout
+                </Button>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </a>
+
         <div
           className='dropdown-menu dropdown-menu-right shadow animated--grow-in'
           aria-labelledby='userDropdown'
